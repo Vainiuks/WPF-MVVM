@@ -1,0 +1,95 @@
+﻿<Window x:Class="PirmasDarbas.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PirmasDarbas.Views"
+        mc:Ignorable="d"
+        Title="ShellView" Height="700" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="140*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+        
+        
+        <Grid.RowDefinitions>
+            
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="180*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="200*"/>
+
+        </Grid.RowDefinitions>
+
+
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FF7E7E7E" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="8"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Black" Grid.ColumnSpan="8" Grid.Row="10"/>
+
+        <Label Content="BerivaAuto" FontFamily="Tw Cen MT Condensed Extra Bold" FontSize="18" RenderTransformOrigin="1.712,0.885" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1"/>
+        <Label Content="Sveiki atvykę į BerivaAuto,&#xD;&#xA;" FontFamily="Times New Roman" FontSize="14" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Label Content="Norėdami užsiregistruoti apžiūrai į autoservisą, užpildykite anketą apačioje.&#xD;&#xA;&#xA;" FontFamily="Times New Roman" FontSize="14" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="3"/>
+        <Label Content="Registracija apžiūrai į autoservisą&#xA;" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="14" FontWeight="Bold" Height="30" Grid.Row="4"  Grid.ColumnSpan="3" Grid.Column="3"/>
+        
+        <Label Content="Vardas:&#xA;" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16" HorizontalContentAlignment="Right" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="5"/>
+        <Label Content="Pavardė:&#xA;" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16" HorizontalContentAlignment="Right" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="6" Grid.RowSpan="2"/>
+        <Label Content="Telefeno numeris:&#xA;" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16" HorizontalContentAlignment="Right" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="7"/>
+        <Label Content="+3706" Grid.Column="4" HorizontalAlignment="Right" Grid.Row="7" VerticalAlignment="Top" Height="34" FontSize="14"/>
+        <Label Content="Registravimosi data:&#xA;" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16" HorizontalContentAlignment="Right" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="8"/>
+        <Label Content="Registravimosi laikas:&#xA;" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16" HorizontalContentAlignment="Right" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="9"/>
+
+        <TextBox  Template="{DynamicResource KontrolesSablonaiTextBox}" x:Name="VardasTxt" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="14" Width="170" Height="25" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="5" />
+        <TextBox  Template="{DynamicResource KontrolesSablonaiTextBox}" x:Name="PavardeTxt" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="14" Width="170" Height="25" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="6" />
+        <TextBox Template="{DynamicResource KontrolesSablonaiTextBox}" x:Name="TelNrTxt" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="14" Width="120" Height="25" Grid.ColumnSpan="1" Grid.Column="5" Grid.Row="7"/>
+        
+        <Calendar x:Name="Calendar1" Grid.Column="4" HorizontalAlignment="Left" Grid.Row="7" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="3" ContextMenuClosing="Calendar1_ContextMenuClosing"/>
+       
+        <ComboBox x:Name="ValandosComboBox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="180" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="9"/>
+        
+        <Border BorderBrush="Black" BorderThickness="1" Background="Black" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="9"/>
+        <Border BorderBrush="Black" Background="Black" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="9" />
+
+        <Button Style="{DynamicResource ApvalusMygtukas}" x:Name="RegisterButton" Content="Registruotis" HorizontalAlignment="Center" VerticalAlignment="Center" Width="101" FontFamily="Times New Roman" FontSize="14" Height="26" Click="RegisterButton_Click" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="11"/>
+        <Button x:Name="UzkrautiPirmaPuslapi" Grid.Row="0" Grid.Column="6" Background="#FF7E7E7E" Grid.ColumnSpan="2" Click="UzkrautiPirmaPuslapi_Click">Peržiūrėti užsiregistravusius</Button>
+
+
+
+    </Grid>
+    <Window.Resources>
+
+        <Style TargetType="Button" x:Key="ApvalusMygtukas">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5" />
+                    <Setter Property="BorderBrush" Value="Red" />
+                    <Setter Property="BorderThickness" Value="2" />
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <ControlTemplate x:Key="KontrolesSablonaiTextBox" TargetType="{x:Type TextBoxBase}">
+            <Border Background="{TemplateBinding Background}" 
+                x:Name="Background" BorderBrush="Black"
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                <ScrollViewer x:Name="PART_ContentHost"/>
+            </Border>
+        </ControlTemplate>
+
+    </Window.Resources>
+</Window>
